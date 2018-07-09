@@ -13,11 +13,6 @@ blogs = dict() #    blog_name : Blog Object
 
 
 def menu():
-    # show the user available blogs
-    # let the user make a choice
-    # do something with that choice
-    # eventually exit
-
     print_blogs()
     selection = input(MENU_PROMPT)
     while selection != 'q':
@@ -51,3 +46,10 @@ def print_posts(blog):
 
 def print_post(post):
     print(MENU_TEMPLATE.format(post.title, post.content ))
+
+def ask_create_post():
+    blog_name = input('Enter the blog title you want to write a post in: ')
+    title = input('Enter your post title: ')
+    content = input('Enter your post content: ')
+
+    blogs[blog_name].create_post(title, content)
